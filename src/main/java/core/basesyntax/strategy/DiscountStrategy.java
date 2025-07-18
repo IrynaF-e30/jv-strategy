@@ -6,11 +6,10 @@ public class DiscountStrategy {
         if (specialEvent == null) {
             return new DefaultDiscountService();
         }
-
         return switch (specialEvent) {
-            case "Новий рік" -> new NewYearDiscountService();
-            case "День народження" -> new BirthdayDiscountService();
-            case "Чорна п'ятниця" -> new BlackFridayDiscountService();
+            case "New Year" -> new NewYearDiscountService();
+            case "Birthday" -> new BirthdayDiscountService();
+            case "Black Friday" -> new BlackFridayDiscountService();
             default -> new DefaultDiscountService();
         };
     }
